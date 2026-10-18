@@ -41,13 +41,11 @@ export default function App() {
             <div className="hero-actions"><button className="button button-primary" onClick={()=>go('events')}>Etkinlikleri keşfet <ArrowRight size={17}/></button><button className="button button-secondary" onClick={()=>go('about')}>YUSES'i tanı <ArrowUpRight size={16}/></button></div>
             <div className="hero-trust"><span><Users size={17}/> Öğrenci odaklı topluluk</span><span><Sparkles size={17}/> Fikirden deneyime</span></div>
           </div>
-          <div className="hero-visual">
-            <div className="hero-photo"></div>
-            <div className="hero-photo-overlay"></div>
-            <div className="hero-stamp"><span>YUSES</span><small>FİKİRLERİ BİRLİKTE BÜYÜTÜRÜZ</small></div>
-            <div className="floating-card"><div className="floating-icon"><Compass size={20}/></div><div><strong>Merak et. Keşfet.</strong><small>Yeni deneyimlere yer aç.</small></div><ArrowUpRight size={18}/></div>
-            <div className="hero-number"><strong>2006–07</strong><span>Kuruluş dönemi</span></div>
-          </div>
+         <div className="hero-visual">
+  <div className="hero-logo-only">
+    <img src={logo} alt="YUSES Kulübü logosu" />
+  </div>
+</div>
           <div className="hero-bottom"><span>FİKİRLERİNİ HAREKETE GEÇİR</span><ChevronDown size={17}/><span>01 / 04</span></div>
         </section>
         <section className="stats-strip">
