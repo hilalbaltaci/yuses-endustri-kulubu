@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Instagram, Mail, Users, Sparkles, Compass, HeartHandshake, CalendarDays, Globe2, ChevronDown } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Instagram, Mail, Users, Sparkles, HeartHandshake, CalendarDays, Globe2, ChevronDown, Cog, GraduationCap } from 'lucide-react';
 import Header from './components/Header.jsx';
 import EventCard from './components/EventCard.jsx';
 import EventModal from './components/EventModal.jsx';
@@ -41,11 +41,23 @@ export default function App() {
             <div className="hero-actions"><button className="button button-primary" onClick={()=>go('events')}>Etkinlikleri keşfet <ArrowRight size={17}/></button><button className="button button-secondary" onClick={()=>go('about')}>YUSES'i tanı <ArrowUpRight size={16}/></button></div>
             <div className="hero-trust"><span><Users size={17}/> Öğrenci odaklı topluluk</span><span><Sparkles size={17}/> Fikirden deneyime</span></div>
           </div>
-          <div className="hero-visual">
-            <div className="hero-photo"></div>
-            <div className="hero-photo-overlay"></div>
-            <div className="hero-stamp"><span>YUSES</span><small>FİKİRLERİ BİRLİKTE BÜYÜTÜRÜZ</small></div>
-            <div className="floating-card"><div className="floating-icon"><Compass size={20}/></div><div><strong>Merak et. Keşfet.</strong><small>Yeni deneyimlere yer aç.</small></div><ArrowUpRight size={18}/></div>
+          <div className="hero-visual" aria-hidden="true">
+            <div className="hv-board">
+              <div className="hv-grid"></div>
+              <div className="hv-orbit"></div>
+              <div className="hv-board-head"><span><Cog size={14}/> SİSTEM · SÜREÇ · İNSAN</span><span>YUSES/26</span></div>
+              <div className="hv-middle">
+                <div className="hv-logo"><img src={logo} alt=""/></div>
+                <div className="hv-chart"><span>VERİMLİLİK</span><div>{[38,56,47,72,64,88].map((h,i)=><i key={i} style={{height:`${h}%`}}></i>)}</div></div>
+              </div>
+              <div className="hv-team"><div className="hv-dots"><span>E</span><span>S</span><span>M</span><span>+</span></div><div><strong>Ekip çalışması</strong><small>Farklı bölümler, tek hedef</small></div></div>
+              <ol className="hv-flow">{['Fikir','Planla','Üret','Geliştir'].map((s,i)=><li key={s}><b>0{i+1}</b>{s}</li>)}</ol>
+            </div>
+            <div className="hv-card hv-schedule">
+              <div className="hv-card-title"><CalendarDays size={15}/> Etkinlik akışı</div>
+              <div className="hv-gantt"><span>Zirve</span><i style={{marginLeft:'0%',width:'62%'}}></i><span>Gezi</span><i style={{marginLeft:'30%',width:'45%'}}></i><span>Atölye</span><i style={{marginLeft:'52%',width:'48%'}}></i></div>
+            </div>
+            <div className="hv-campus"><GraduationCap size={18}/><span>Kampüs yaşamı</span></div>
             <div className="hero-number"><strong>2006–07</strong><span>Kuruluş dönemi</span></div>
           </div>
           <div className="hero-bottom"><span>FİKİRLERİNİ HAREKETE GEÇİR</span><ChevronDown size={17}/><span>01 / 04</span></div>
